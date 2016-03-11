@@ -3,7 +3,7 @@
 
 int main()
 {
-    printf("hello\n");
+    std::cout << "hello\n";
 	Engine engine;
     return 0;
 }
