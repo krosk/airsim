@@ -4,7 +4,7 @@
 
 Engine::Engine()
 {
-	positionComponentList.add(1, PositionComponent(2, 3, 4));
+	positionComponentList.add(1, PositionComponent(1, 2, 3, 4));
 
 	std::cout << positionComponentList.contains(1) << "\n";
 	std::cout << positionComponentList.contains(2) << "\n";
