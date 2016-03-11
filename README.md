@@ -1,6 +1,6 @@
 # airsim
 
-# airsim
+Behaviors
 
 Passenger check list
 
@@ -25,7 +25,7 @@ Passenger check list
 
 
 
-Aircraft movement
+
 Apron
    
 Taxiway
@@ -81,8 +81,48 @@ Luggage vehicle unloading aircraft
 Maintenance vehicle
    Same as luggage
    Could directly wait at service area
-   
-   
+
+
+
+Implementing Entity System
+
+
+
+   Entity
+      Aircraft
+      Vehicle
+      Passenger
+      Luggage
+      Building
+      Road
+   Components
+      Position
+         X Y Z R
+      PositionTarget
+         X Y Z R
+      Velocity
+         X Y Z R
+      AircraftLandingState
+         Enum
+      AircraftTakeoffState
+         Enum
+      PassengerState
+         Enum
+         Name
+         
+      VehicleState
+         Enum
+      LuggageState
+         Enum
+      VehicleMovementArea
+      AircraftMovementArea
+      PassengerMovementArea
+      AircraftLoadingArea
+      AircraftServiceArea
+      PassengerContainer
+      LuggageContainer
+      Money
+      Reputation
 
 Example
 http://www.miniatur-wunderland.de/fileadmin/media/wochenbericht/2007/01/09-flughafen-layout.jpg
