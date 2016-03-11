@@ -4,6 +4,6 @@ INCLUDE = -Iinclude
 CFLAGS = -Wall
 
 test:
-	$(MAKE) main.cpp
+	$(CC) $(CFLAGS) main.cpp
 	@echo Done.
 
