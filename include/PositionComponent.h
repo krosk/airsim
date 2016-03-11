@@ -8,5 +8,4 @@ class PositionComponent
 	int positionZ;
 	
 	PositionComponent(int x, int y, int z) : positionX(x), positionY(y), positionZ(z) {};
-	PositionComponent() : PositionComponent(0, 0, 0) {};
 };

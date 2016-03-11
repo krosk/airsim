@@ -15,7 +15,7 @@ bool Container<T>::contains(int id) const
 template <class T>
 T& Container<T>::get(int id)
 {
-	return m_container[id];
+	return m_container.at(id);
 }
 
 template <class T>
