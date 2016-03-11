@@ -7,6 +7,7 @@ class PositionComponent
 	int positionX;
 	int positionY;
 	int positionZ;
+	int rotation;
 	
-	PositionComponent(int id, int x, int y, int z) : uid(id), positionX(x), positionY(y), positionZ(z) {};
+	PositionComponent(int id, int x, int y, int z, int r) : uid(id), positionX(x), positionY(y), positionZ(z), rotation(r) {};
 };
