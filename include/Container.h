@@ -11,8 +11,8 @@ class Container
 	public:
 	void add(int id, const T &value);
 	bool contains(int id) const;
-	//T& get(int id) const;
-	//void remove(int id);
+	T& get(int id);
+	void remove(int id);
 };
 
 #include "Container.tpp"
