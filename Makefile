@@ -1,9 +1,8 @@
 PROGNAME = airsim$(EXE)
-INCLUDE = -Iinclude
+INCLUDE = -linclude
 
 CFLAGS = -Wall
 
-test:
-	$(CC) $(CFLAGS) main.cpp
+all:
+	$(CC) $(CFLAGS) -o $(PROGNAME) main.cpp -lstdc++
 	@echo Done.
-
