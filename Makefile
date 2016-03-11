@@ -2,9 +2,9 @@ PROGNAME = airsim$(EXE)
 
 LIBS = -lstdc++
 
-INC = -linclude
+INC = -Iinclude
 
-CFLAGS = -Wall
+CFLAGS = -Wall -std=c++11
 
 all:
 	$(CC) $(CFLAGS) $(INC) -o $(PROGNAME) main.cpp src/*.cpp $(LIBS)
