@@ -90,3 +90,10 @@ http://www.miniatur-wunderland.de/fileadmin/media/wochenbericht/2007/01/09-flugh
 
 Resource
 http://theory.stanford.edu/~amitp/GameProgramming/MapRepresentations.html
+
+
+Coding
+http://stackoverflow.com/questions/471432/in-which-scenario-do-i-use-a-particular-stl-container
+http://www.richardlord.net/blog/what-is-an-entity-framework
+http://gameprogrammingpatterns.com/data-locality.html
+http://incise.org/hash-table-benchmarks.html

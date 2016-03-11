@@ -7,5 +7,9 @@ INC = -linclude
 CFLAGS = -Wall
 
 all:
-	$(CC) $(CFLAGS) $(INC) -o $(PROGNAME) main.cpp $(LIBS)
+	$(CC) $(CFLAGS) $(INC) -o $(PROGNAME) main.cpp src/*.cpp $(LIBS)
 	@echo Done
+
+clean:
+	rm *.o
+	rm $(PROGNAME)
