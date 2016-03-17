@@ -94,14 +94,18 @@ Implementing Entity System
       Passenger
       Luggage
       Building
+      Gate
       Road
    Components
+      Sprite
+         
       Position
          X Y Z R
-      PositionTarget
+      MoveTargetList
          X Y Z R
-      Velocity
-         X Y Z R
+      VelocityBase
+         FB UD LR
+      
       AircraftLandingState
          Enum
       AircraftTakeoffState
@@ -123,6 +127,16 @@ Implementing Entity System
       LuggageContainer
       Money
       Reputation
+   System
+      DecisionSystem
+      MovementSystem
+         In Position
+         In VelocityBase
+         In MoveTargetList
+         Ou Position
+      RenderSystem
+         In Position
+         Ou Sprite
 
 Example
 http://www.miniatur-wunderland.de/fileadmin/media/wochenbericht/2007/01/09-flughafen-layout.jpg
