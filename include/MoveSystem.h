@@ -3,16 +3,28 @@
 #include "Container.h"
 #include "VelocityComponent.h"
 #include "PositionComponent.h"
+#include "PositionTargetComponent.h"
 #include "ISystem.h"
+
+class MovementNode
+{
+    public:
+    MovementNode(int id, PositionComponent &p, const VelocityComponent &v, const PositionTargetComponent &t) :
+        uid(id), position(p), velocity(v), target(t) {};
+    const int uid;
+    PositionComponent &position;
+    const VelocityComponent &velocity;
+    const PositionTargetComponent &target;
+    
+};
 
 class MoveSystem : public ISystem
 {
 	public:
-	MoveSystem(Container<PositionComponent> &position, Container<VelocityComponent> &velocity) : positionComponentList(position), velocityComponentList(velocity) {};
+	MoveSystem() : {};
 
 	virtual void update(int currentStep) override;
 
 	private:
-	Container<PositionComponent> &positionComponentList;
-	Container<VelocityComponent> &velocityComponentList;
+	Container<MovementNode> movementNode;
 };
