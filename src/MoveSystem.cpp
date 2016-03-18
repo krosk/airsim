@@ -11,7 +11,8 @@ void MoveSystem::update(int currentStep)
 
 		PositionComponent &p = n.position;
 		const VelocityComponent &v = n.velocity;
-		p.positionX += v.velocityX;
-		std::cout << p.positionX << "\n";
+		const PositionTargetComponent &t = n.target;
+		
+		p.positionX += v.velocityFB;
 	}
 }
