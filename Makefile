@@ -1,6 +1,6 @@
 PROGNAME = airsim$(EXE)
 
-LIBS = -lstdc++
+LIBS = -lstdc++ -lm
 
 INC = -Iinclude
 
