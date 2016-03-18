@@ -10,6 +10,8 @@ void MoveSystem::update(int currentStep)
 		MovementNode &n = movementNode.get(uidList.at(i));
 
 		PositionComponent &p = n.position;
-		std::cout << p.positionX;
+		const VelocityComponent &v = n.velocity;
+		p.positionX += v.velocityX;
+		std::cout << p.positionX << "\n";
 	}
 }
