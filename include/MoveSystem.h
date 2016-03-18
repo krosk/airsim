@@ -23,6 +23,7 @@ class MoveSystem : public ISystem
 	MoveSystem() {};
 
 	virtual void update(int currentStep) override;
+    void addNode(MovementNode n) { movementNode.add(n.uid, n); }
 
 	private:
 	Container<MovementNode> movementNode;
