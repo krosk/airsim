@@ -15,13 +15,12 @@ class MovementNode
     PositionComponent &position;
     const VelocityComponent &velocity;
     const PositionTargetComponent &target;
-    
 };
 
 class MoveSystem : public ISystem
 {
 	public:
-	MoveSystem() : {};
+	MoveSystem() {};
 
 	virtual void update(int currentStep) override;
 
