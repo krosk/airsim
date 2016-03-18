@@ -4,14 +4,12 @@
 
 void MoveSystem::update(int currentStep)
 {
-	const std::vector<int> &positionKeys = positionComponentList.uids();
-	const std::vector<int> &velocityKeys = velocityComponentList.uids();
-
-	for(int i = 0; i < positionKeys.size(); i++)
+    const std::vector<int> &uidList = movementNode.uids();
+	for(int i = 0; i < uidList.size(); i++)
 	{
-		int uid = positionKeys[i];
+		MovementNode &n = movementNode.get(uidList.at(i));
 
-		PositionComponent &p = positionComponentList.get(uid);
+		PositionComponent &p = n.position;
 		std::cout << p.positionX;
 	}
 }
