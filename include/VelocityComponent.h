@@ -4,10 +4,8 @@ class VelocityComponent
 {
 	public:
 	const int uid;
-	int velocityX;
-	int velocityY;
-	int velocityZ;
-	int targetAngle;
+	int velocityFB;
+	int velocityR;
 	
-	VelocityComponent(int id, int x, int y, int z, int r) : uid(id), velocityX(x), velocityY(y), velocityZ(z), targetAngle(r) {};
+	VelocityComponent(int id, int fb, int r) : uid(id), velocityFB(fb), velocityR(r) {};
 };
