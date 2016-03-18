@@ -6,9 +6,9 @@
 
 void Engine::addDummyEntity(int uid)
 {
-	PositionComponent &p = positionComponentList.add(uid, PositionComponent(uid, 1, 1, 1, 0));
-	VelocityComponent &v = velocityComponentList.add(uid, VelocityComponent(uid, 1, 0, 0, 0));
-	PositionTargetComponent &t = positionTargetComponentList.add(uid, PositionTargetComponent(uid, 5, 1, 1, 0));
+	PositionComponent &p = positionComponentList.add(uid, PositionComponent(uid, 0, 0, 0, 0));
+	VelocityComponent &v = velocityComponentList.add(uid, VelocityComponent(uid, 1, 30));
+	PositionTargetComponent &t = positionTargetComponentList.add(uid, PositionTargetComponent(uid, 5, 0, 0, 0));
 	MovementNode n(uid, p, v, t);
 	moveSystem.addNode(n);
 }
@@ -16,5 +16,8 @@ void Engine::addDummyEntity(int uid)
 Engine::Engine() :
 	moveSystem(MoveSystem())
 {
-	addDummyEntity(1);
+    for(int i = 1; i < 2; i++)
+    {
+        addDummyEntity(i);
+    }
 }
