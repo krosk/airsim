@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::cout << "hello\n";
+    std::cout << "start\n";
 	Engine engine;
 
 	for (int i = 0; i < 10; i++)
@@ -11,6 +11,8 @@ int main()
 		std::cout << "cycle " << i << "\n";
 		engine.update(i);
 	}
+	
+	std::cout << "finished\n";
 
     return 0;
 }
