@@ -19,7 +19,8 @@ void MoveSystem::update(int currentStep)
 		int deltaY = t.targetY - p.positionY;
 		double pathRad = std::atan2(deltaY, deltaX);
 		int pathR = (int) (pathRad * 180. / M_PI);
-		int deltaR = pathR - p.positionR;
+		int deltaR = deltaX != 0 || deltaY != 0 ? pathR - p.positionR :
+		    t.targetR - p.positionR;
 		if (deltaR <= -180)
 		{
 		    deltaR = -360 - deltaR;
@@ -29,18 +30,29 @@ void MoveSystem::update(int currentStep)
 		    deltaR = 360 - deltaR;
 		}
 		
-		// move
+		// move angular
 		if (std::abs(deltaR) > v.velocityR)
 		{
 		    p.positionR = deltaR > 0 ? p.positionR + v.velocityR :
 		                  deltaR < 0 ? p.positionR - v.velocityR :
 		                  pathR;
 		}
+		// move forward
 		else
 		{
 		    p.positionR = pathR;
-		    p.positionX += (int) (v.velocityFB * std::cos(pathRad));
-		    p.positionY += (int) (v.velocityFB * std::sin(pathRad));
+		    int newX = (int) (v.velocityFB * std::cos(pathRad));
+		    if (std::abs(newX) > std::abs(deltaX))
+		    {
+		        newX = deltaX;
+		    }
+		    int newY = (int) (v.velocityFB * std::sin(pathRad));
+		    if (std::abs(newY) > std::abs(deltaY))
+		    {
+		        newY = deltaY;
+		    }
+		    p.positionX += newX;
+		    p.positionY += newY;
 		}
 		
 		std::cout << p.positionX << " " << p.positionY 
