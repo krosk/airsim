@@ -6,7 +6,7 @@ int main()
     std::cout << "start\n";
 	Engine engine;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 16; i++)
 	{
 		std::cout << "cycle " << i << "\n";
 		engine.update(i);
