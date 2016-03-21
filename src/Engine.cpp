@@ -6,8 +6,8 @@
 
 void Engine::addDummyEntity(int uid)
 {
-	PositionComponent &p = positionComponentList.add(uid, PositionComponent(uid, 0, 0, 0, 0));
-	VelocityComponent &v = velocityComponentList.add(uid, VelocityComponent(uid, 5, 30));
+	PositionComponent &p = positionComponentList.add(uid, PositionComponent(uid, 0, 0, 0, -120));
+	VelocityComponent &v = velocityComponentList.add(uid, VelocityComponent(uid, 10, 45));
 	PositionTargetComponent &t = positionTargetComponentList.add(uid, PositionTargetComponent(uid, -30, -30, 0, 0));
 	MovementNode n(uid, p, v, t);
 	moveSystem.addNode(n);
