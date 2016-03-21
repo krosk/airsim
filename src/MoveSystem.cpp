@@ -8,7 +8,8 @@ void MoveSystem::update(int currentStep)
     const std::vector<int> &uidList = movementNode.uids();
 	for(int i = 0; i < uidList.size(); i++)
 	{
-		MovementNode &n = movementNode.get(uidList.at(i));
+	    int uid = uidList.at(i);
+		MovementNode &n = movementNode.get(uid);
 
 		PositionComponent &p = n.position;
 		const VelocityComponent &v = n.velocity;
@@ -58,6 +59,11 @@ void MoveSystem::update(int currentStep)
 		std::cout << p.positionX << " " << p.positionY 
 		    << " " << p.positionR << "\n";
 		std::cout << t.targetX << " " << t.targetY 
-		    << " " << pathR << "\n";
+		    << " " << pathR << " " << deltaR << "\n";
+		    
+		if (deltaX == 0 && deltaY == 0 && deltaR == 0)
+		{
+		    movementNode.remove(uid);
+		}
 	}
 }
