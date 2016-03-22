@@ -9,11 +9,11 @@
 class MovementNode
 {
     public:
-    MovementNode(int id, PositionComponent &p, const VelocityComponent &v, const PositionTargetComponent &t) :
+    MovementNode(int id, PositionComponent &p, VelocityComponent &v, const PositionTargetComponent &t) :
         uid(id), position(p), velocity(v), target(t) {};
     const int uid;
     PositionComponent &position;
-    const VelocityComponent &velocity;
+    VelocityComponent &velocity;
     const PositionTargetComponent &target;
 };
 
