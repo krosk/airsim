@@ -12,7 +12,7 @@ void MoveSystem::update(int currentStep)
 		MovementNode &n = movementNode.get(uid);
 
 		PositionComponent &p = n.position;
-		const VelocityComponent &v = n.velocity;
+		VelocityComponent &v = n.velocity;
 		const PositionTargetComponent &t = n.target;
 		
 		// estimate XY angle
@@ -31,9 +31,16 @@ void MoveSystem::update(int currentStep)
 		    deltaR = 360 - deltaR;
 		}
 		
-		// move angular
-		if (std::abs(deltaR) > v.velocityR)
+		if (deltaX == 0 && deltaY == 0 && deltaR == 0)
 		{
+		    v.moving = false;
+		    movementNode.remove(uid);
+		    continue;
+		}
+		// move angular
+		else if (std::abs(deltaR) > v.velocityR)
+		{
+		    v.moving = true;
 		    p.positionR = deltaR > 0 ? p.positionR + v.velocityR :
 		                  deltaR < 0 ? p.positionR - v.velocityR :
 		                  pathR;
@@ -41,6 +48,7 @@ void MoveSystem::update(int currentStep)
 		// move forward
 		else
 		{
+		    v.moving = true;
 		    p.positionR = pathR;
 		    int newX = (int) (v.velocityFB * std::cos(pathRad));
 		    if (std::abs(newX) > std::abs(deltaX))
@@ -60,10 +68,5 @@ void MoveSystem::update(int currentStep)
 		    << " " << p.positionR << "\n";
 		std::cout << t.targetX << " " << t.targetY 
 		    << " " << pathR << " " << deltaR << "\n";
-		    
-		if (deltaX == 0 && deltaY == 0 && deltaR == 0)
-		{
-		    movementNode.remove(uid);
-		}
 	}
 }
