@@ -1,9 +1,14 @@
 #include <utility>
 
 template <class T>
-void Container<T>::add(int uid, const T &value)
+T& Container<T>::add(int uid, const T &value)
 {
-	m_container.insert(std::pair<int, T>(uid, value));
+    if (contains(uid))
+    {
+        remove(uid);
+    }
+    m_container.insert(std::pair<int, T>(uid, value));
+	return get(uid);
 }
 
 template <class T>
