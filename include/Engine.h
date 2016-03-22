@@ -18,7 +18,8 @@ class Engine
 
 	MoveSystem moveSystem;
 
-	void addDummyEntity(int uid);
+	void addMovableEntity(int uid);
+	void moveMovableEntity(int uid, int x, int y, int z, int r);
 
 	public:
 	Engine();
