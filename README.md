@@ -101,7 +101,7 @@ Implementing Entity System
          
       Position
          X Y Z R
-      MoveTargetList
+      PositionTarget
          X Y Z R
       VelocityBase
          FB UD LR
@@ -132,7 +132,7 @@ Implementing Entity System
       MovementSystem
          In Position
          In VelocityBase
-         In MoveTargetList
+         In MoveTarget
          Ou Position
       RenderSystem
          In Position
