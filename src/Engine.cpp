@@ -1,8 +1,6 @@
 #include "Engine.h"
-#include "MoveSystem.h"
 
 #include <iostream>
-
 
 void Engine::addMovableEntity(int uid)
 {
@@ -21,12 +19,22 @@ void Engine::moveMovableEntity(int uid,
 	moveSystem.addNode(n);
 }
 
+void Engine::addAircraft(int uid)
+{
+    addMovableEntity(uid);
+    PositionComponent &p = positionComponentList.get(uid);
+	PositionTargetComponent &t = positionTargetComponentList.get(uid);
+    AiNodeAircraft n(uid, p, t);
+    aiSystemAircraft.addNode(n);
+}
+
 Engine::Engine() :
-	moveSystem(MoveSystem())
+	moveSystem(MoveSystem()),
+	aiSystemAircraft(AiSystemAircraft())
 {
     for(int i = 1; i < 2; i++)
     {
-        addMovableEntity(i);
+        addAircraft(i);
     }
     
     moveMovableEntity(1, 100, 50, 0, 60);
